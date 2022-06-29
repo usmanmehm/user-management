@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
-// FOR HTTP REQ
+//HERE IS FOR HTTP REQ
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { shareReplay } from 'rxjs/operators';
-// FOR DIFFRENT DEPLOYMENT OPTIONS
+//HERE IS FOR DIFFRENT DEPLOYMENT OPTIONS
 import { environment } from '@environments/environment';
-// HTTP MODELS
+//HERE IS HTTP MODELS
 import { HTTP_REQ, HTTP_RES } from '@models/common';
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  // API URL
+  //HERE IS API URL
   private readonly apiUrl = environment.apiUrl;
   constructor(private http: HttpClient) {}
-  // GET REQUEST
+  //HERE IS GET REQUEST
   public async get(httpData: HTTP_REQ):Promise<HTTP_RES> {
     try {
       const httpOptions = this.generateHttpOptions(
@@ -29,7 +29,7 @@ export class ApiService {
       return { success: false, data: null, error };
     }
   }
-  // POST REQUEST
+  //HERE IS POST REQUEST
   public async post(httpData: HTTP_REQ) {
     try {
       const httpOptions = this.generateHttpOptions(
@@ -45,7 +45,7 @@ export class ApiService {
       return { success: false, data: null, error };
     }
   }
-  // PUT REQUEST
+  //HERE IS PUT REQUEST
   public async put(httpData: HTTP_REQ) {
     try {
       const httpOptions = this.generateHttpOptions(
@@ -61,7 +61,7 @@ export class ApiService {
       return { success: false, data: null, error };
     }
   }
-  // DELETE REQUEST
+  //HERE IS DELETE REQUEST
   public async delete(httpData: HTTP_REQ) {
     try {
       const result: any = await this.http
@@ -73,7 +73,7 @@ export class ApiService {
       return { success: false, data: null, error };
     }
   }
-  // DYNAMIC HTTP OPTIONS
+  //HERE IS DYNAMIC HTTP OPTIONS
   private generateHttpOptions(params: any, headers: any) {
     const httpOptions: any = {};
     if (params) {

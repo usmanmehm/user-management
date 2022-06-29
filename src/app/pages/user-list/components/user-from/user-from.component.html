@@ -36,7 +36,7 @@
         placeholder="Password"
         [type]="showPassword ? 'text' : 'password'"
       />
-      <!-- SHOW AND HIDE PASSWORD -->
+      <!-- HERE IS SHOW AND HIDE PASSWORD -->
       <button
         color="accent"
         matSuffix
@@ -49,7 +49,7 @@
           showPassword ? "visibility_off" : "visibility"
         }}</mat-icon>
       </button>
-      <!-- SHOW AND HIDE PASSWORD -->
+      <!--HERE IS SHOW AND HIDE PASSWORD -->
       <mat-error *ngIf="fieldHasError('password')">
         {{ getErrorMessage("password") }}
       </mat-error>

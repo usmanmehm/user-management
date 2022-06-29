@@ -12,7 +12,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 
-// SERVICES
+//HERE IS S SERVICES
 import { AuthService } from '@core/services/auth';
 
 @Injectable({
@@ -20,7 +20,7 @@ import { AuthService } from '@core/services/auth';
 })
 export class AdminGuard implements CanActivate, CanActivateChild, CanLoad {
   constructor(private authService: AuthService, private router: Router) {}
-  // CHECK IF IS ADMIN FROM SERVER
+  //  HERE IS CHECK IF IS ADMIN FROM SERVER
   private async isAdmin(): Promise<boolean | UrlTree> {
     const currentUser = await this.authService.userProfile();
     const userIsAdmin = currentUser && currentUser?.role > 1 ? true : false;

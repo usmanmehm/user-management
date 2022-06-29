@@ -11,6 +11,7 @@
         />
       </div>
       <div class="toolbar-navigation">
+       <!--HERE IS async tool to resolve the resolve a of subscribe template-->
         <ng-container *ngIf="currentUser | async as user;else noUser">
           <a
             mat-icon-button
@@ -29,8 +30,6 @@
           >
             <mat-icon>group</mat-icon>
           </a>
-          <!-- USER MENU -->
-
           <button
             matTooltip="User Menu"
             mat-icon-button
@@ -44,6 +43,7 @@
               <mat-icon>person</mat-icon>
               <span>{{ user?.fullName }}</span>
             </button>
+                      <!--HERE IS USER MENU and Call the logout function-->
             <button mat-menu-item (click)="logOut()">
               <mat-icon color="warn">logout</mat-icon>
               <span>Logout</span>
@@ -64,14 +64,15 @@
               <mat-icon>no_accounts</mat-icon>
               <span>Deleted User</span>
             </button>
+            <!--HERE IS logout function calls-->
             <button mat-menu-item (click)="logOut()">
               <mat-icon color="warn">logout</mat-icon>
               <span>Logout</span>
             </button>
           </mat-menu>
         </ng-template>
-
       </div>
     </div>
+
   </div>
 </mat-toolbar>

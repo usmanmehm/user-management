@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// ANGULAR FORM
+//HERE IS ANGULAR FORM
 import {
   FormControl,
   Validators,
@@ -8,7 +8,7 @@ import {
   ValidatorFn,
   ValidationErrors,
 } from '@angular/forms';
-// SERVICES
+//HERE IS SERVICES
 import { AuthService } from '@core/services/auth';
 import { FormValidationService } from '@core/services/form';
 @Component({
@@ -17,20 +17,20 @@ import { FormValidationService } from '@core/services/form';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  // SHOW AND HIDE PW FOR USER EXPERIENCE
+  //HERE IS SHOW AND HIDE PW FOR USER EXPERIENCE
   showPassword: boolean = false;
-  // REGISTER FORM GROUP
+  //HERE IS REGISTER FORM GROUP
   registerForm: FormGroup;
   constructor(
     private authService: AuthService,
     private formValidationService: FormValidationService
   ) {
-    // INIT REGISTER FORM
+    //HERE IS INIT REGISTER FORM
     this.registerForm = this.initRegisterForm;
   }
 
   ngOnInit(): void {}
-  // REGISTER FORM PROPERTIES
+  //HERE IS REGISTER FORM PROPERTIES
   private get initRegisterForm() {
     return new FormGroup(
       {
@@ -65,31 +65,31 @@ export class RegisterComponent implements OnInit {
           this.passwordMatchValidator(),
         ]),
       },
-      // TODO CAN ACTIVATE FOR BETTER PERFORMANCE
-      // { updateOn: 'blur' }
+      //HERE IS TODO CAN ACTIVATE FOR BETTER PERFORMANCE
+      //HERE IS { updateOn: 'blur' }
     );
   }
-  // FIELD ERROR
+  //HERE IS FIELD ERROR
   fieldHasError(fieldName: string): boolean {
     return this.formValidationService.fieldHasError(
       fieldName,
       this.registerForm
     );
   }
-  // FIELD ERROR MESSAGE
+  //HERE IS FIELD ERROR MESSAGE
   getErrorMessage(fieldName: string): string {
     return this.formValidationService.getErrorMessage(
       fieldName,
       this.registerForm
     );
   }
-  // SUBMIT REGISTER FORM
+  //HERE IS SUBMIT REGISTER FORM
   onRegisterSubmit() {
     if (this.registerForm.valid) {
       this.authService.register(this.registerForm.value);
     }
   }
-  // CUSTOM VALIDATOR
+  //HERE IS CUSTOM VALIDATOR
   private passwordMatchValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const passwordVal = this.registerForm?.get('password')?.value;

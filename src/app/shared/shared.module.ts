@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-// ANGULAR FORM MODULES
+//HERE IS ANGULAR FORM MODULES
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// SHARED ANGULAR MATERIAL MODULES
+//HERE IS SHARED ANGULAR MATERIAL MODULES
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
@@ -14,10 +14,10 @@ import { MatIconModule } from '@angular/material/icon';
   declarations: [],
   imports: [CommonModule],
   exports: [
-    // FORM MODULES
+    //HERE IS FORM MODULES IMPORTED
     FormsModule,
     ReactiveFormsModule,
-    // ANGULAR MATERIAL MODULES
+    //HERE IS ANGULAR MATERIAL MODULES IMPORTED
     MatButtonModule,
     MatInputModule,
     MatCardModule,

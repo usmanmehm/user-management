@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-// COOKIE SERVICE
+//HERE IS COOKIE SERVICE
 import { CookieService } from 'ngx-cookie-service';
-// HTTP CLIENT
+//HERE IS HTTP CLIENT
 import { HttpClientModule } from '@angular/common/http';
-// SNACKBAR MODULE FOR NOTIFICATIONS
+//HERE IS SNACKBAR MODULE FOR NOTIFICATIONS
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-// LOADING SPINNER
+//HERE IS LOADING SPINNER
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoadingSpinner } from '@shared/components';
-// HTTP INTERCEPTOR
+//HERE IS HTTP INTERCEPTOR
 import { httpInterceptorProviders } from './interceptors';
 @NgModule({
   declarations: [LoadingSpinner],

@@ -8,10 +8,10 @@ import {
   ValidationErrors,
 } from '@angular/forms';
 
-// SERVICES
+// HERE IS SERVICES
 import { GlobalDataService } from '@core/services/common';
 import { FormValidationService } from '@core/services/form';
-// MODELS
+//HERE IS  MODELS
 import { PROFILE } from '@models/auth';
 
 @Component({
@@ -21,31 +21,31 @@ import { PROFILE } from '@models/auth';
 })
 export class UserFromComponent implements OnInit {
   @Input() userData!: PROFILE;
-  readonly userRoles = [
+  readonly userRoles = [  //Here is read only attribute show the text is readonly
     { val: 1, viewVal: 'Customer' },
     { val: 2, viewVal: 'Admin' },
     { val: 3, viewVal: 'Super Admin' },
   ];
   currentUser: PROFILE | null = this.globalData.currentUser$.getValue();
-  // SHOW AND HIDE PW FOR USER EXPERIENCE
+  //HERE IS  SHOW AND HIDE PW FOR USER EXPERIENCE
   showPassword: boolean = false;
-  // USER FORM GROUP
+  //HERE IS USER FORM GROUP
   userForm!: FormGroup;
   constructor(
     private formValidationService: FormValidationService,
     private globalData: GlobalDataService
   ) {
-    // INIT USER FORM
+    //HERE IS INIT USER FORM
   }
 
   ngOnInit(): void {
     this.userForm = this.inituserForm;
   }
-  // GET USER FORM DATA
+  //HERE IS GET USER FORM DATA
   get getFormData() {
     return { ...this.userForm.value, role: this.userForm.value?.role || 1 };
   }
-  // USER FORM PROPERTIES
+  //HERE IS USER FORM PROPERTIES
   private get inituserForm() {
     const passwordValidator = [
       Validators.required,
@@ -70,7 +70,7 @@ export class UserFromComponent implements OnInit {
         email: new FormControl(
           {
             value: this.userData?.email || '',
-            //! EMAIL CANT BE CHANGE BECAUSE OF USED TO AUTH
+            //!HERE IS EMAIL CANT BE CHANGE BECAUSE OF USED TO AUTH
             disabled: this.userData ? true : false,
           },
           [
@@ -87,20 +87,20 @@ export class UserFromComponent implements OnInit {
           this.userData ? [] : passwordConfirmValidator
         ),
       }
-      // TODO CAN ACTIVATE FOR BETTER PERFORMANCE
+      //HERE IS TODO CAN ACTIVATE FOR BETTER PERFORMANCE
       // { updateOn: 'blur' }
     );
   }
-  // FIELD ERROR
+  //HERE IS  FIELD ERROR
   fieldHasError(fieldName: string): boolean {
     return this.formValidationService.fieldHasError(fieldName, this.userForm);
   }
-  // FIELD ERROR MESSAGE
+  //HERE IS FIELD ERROR MESSAGE
   getErrorMessage(fieldName: string): string {
     return this.formValidationService.getErrorMessage(fieldName, this.userForm);
   }
 
-  // CUSTOM VALIDATOR
+  //HERE IS  CUSTOM VALIDATOR
   private passwordMatchValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const passwordVal = this.userForm?.get('password')?.value;

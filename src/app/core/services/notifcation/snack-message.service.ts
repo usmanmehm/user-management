@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-// SNACKBAR
+//HERE IS SNACKBAR
 import {MatSnackBar} from '@angular/material/snack-bar'
-// MODELS
+//HERE IS MODELS
 import { SNACK_DATA } from '@models/notification';
 @Injectable({
   providedIn: 'root'

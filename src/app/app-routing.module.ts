@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// ROUTER GUARDS
+//HERE IS IMPORTED ROUTER GUARDS
 import { LoginGuard, NotLoginGuard } from '@core/guards';
 const routes: Routes = [
 
   {
+    //Here is the router methods
     path: 'auth',
     canActivate: [NotLoginGuard],
     canLoad: [NotLoginGuard],

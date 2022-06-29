@@ -5,18 +5,18 @@ import { Injectable } from '@angular/core';
 })
 export class FormValidationService {
   constructor() {}
-  // FIELD ERROR
+  //HERE IS FIELD ERROR
   fieldHasError(fieldName: string, targetForm: any): boolean {
     const formField = targetForm?.controls[fieldName];
     return formField?.invalid && formField?.touched ? true : false;
   }
-  // FIELD ERROR MESSAGE
+  //HERE IS FIELD ERROR MESSAGE
   getErrorMessage(fieldName: string, targetForm: any): string {
     const formField = targetForm?.get(fieldName);
     const fieldErrors = targetForm?.controls[fieldName].errors;
     return formField?.hasError('required')
       ? 'Reuired field'
-      : // JSON SERVER ONLY APPLY EMAIL
+      : //HERE IS JSON SERVER ONLY APPLY EMAIL
       formField?.hasError('email')
       ? 'Username must be email'
       : formField?.hasError('minlength')
@@ -31,7 +31,7 @@ export class FormValidationService {
       ? 'Passwords mismatch'
       : 'Unknown error';
   }
-  // MAKE LENGTH ERRORS SHORTER
+  //HERE IS MAKE LENGTH ERRORS SHORTER
   private getLengthError(fieldError: any): string {
     return `(${fieldError?.actualLength} / ${fieldError?.requiredLength})`;
   }
