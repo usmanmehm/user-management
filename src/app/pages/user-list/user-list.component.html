@@ -10,6 +10,7 @@
 </div>
 <ng-container *ngIf="userList && userList.length">
   <ng-container *ngIf="userList.length > 0; else noItemTemplate">
+    <!--HERE IS event binding for target event-->
     <user-table
       [userList]="userList"
       (update)="updateUser($event)"

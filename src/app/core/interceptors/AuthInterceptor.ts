@@ -9,7 +9,7 @@ import {
 import { Observable } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
-// SERVICES
+//HERE IS  SERVICES
 import { LoadingSpinnerService } from '@core/services/common';
 
 @Injectable()
@@ -22,7 +22,7 @@ export class AuthInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    // ADD TOKEN TO REQUEST HEADER
+    //HERE IS ADD TOKEN TO REQUEST HEADER
     this.spinnerService.addQuene();
     const clonedRequest = this.cookieService.check('authToken')
       ? req.clone({
@@ -32,11 +32,11 @@ export class AuthInterceptor implements HttpInterceptor {
           ),
         })
       : req;
-    // ! REQUEST DELAYED FOR SHOWING SPINNER
+    // !HERE IS  REQUEST DELAYED FOR SHOWING SPINNER
     return next.handle(clonedRequest).pipe(delay(500),
       map<HttpEvent<any>, any>((evt: HttpEvent<any>) => {
         if (evt instanceof HttpResponse) {
-          // İstek bitiminde kuyruktan çıkarma
+          //HERE IS İstek bitiminde kuyruktan çıkarma
           this.spinnerService.removeQuene();
         }
         return evt;

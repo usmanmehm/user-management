@@ -134,96 +134,28 @@
       "email": "noobadmin@ho.co",
       "password": "$2a$10$vfiVlTxKJBVEnz3xf/12qOrIGNPEsdzXoyXTnIWv2d4gY9XdJVShO",
       "id": "849c94e2-f2d6-41e3-ae19-5349f0d97d7f"
+    },
+    {
+      "email": "obaidsamim@humber.ca",
+      "password": "$2a$10$JSGACbamjrosjCnXTHYUKu7gco62QBfBjrpNkt.h2IA.WatkdhNle",
+      "id": "8046e81f-c90b-4534-b210-8c27e0f9336d"
+    },
+    {
+      "email": "hi@mail.com",
+      "password": "$2a$10$HwUoYY8YUy.ANYdCUHshZeg9cIzCL0aSKeeOwlJoV9Pavvvp4J0M2",
+      "id": "f704bc72-171b-423b-baf9-7f983aa7991b"
+    },
+    {
+      "email": "usman@mehm.com",
+      "password": "$2a$10$qdytrxn4SVlkGcCh/Nd8heAtHQT4yHYZQlDz/64Xercy4gyZWmy0G",
+      "id": "8b3f4365-b23f-4b58-bd27-d7e01fa96d82"
     }
   ],
   "profiles": [
     {
-      "email": "demo1@ho.co",
-      "fullName": "Demo Lord",
-      "role": 3,
-      "id": 1,
-      "userId": 1
-    },
-    {
-      "email": "demo2@ho.co",
-      "fullName": "Demo Super Admin",
-      "role": 2,
-      "id": 2,
-      "userId": 2
-    },
-    {
-      "email": "zt@ho.co",
-      "fullName": "Ziya Taşkın",
-      "role": 1,
-      "id": 3,
-      "userId": 3
-    },
-    {
-      "email": "john@mail.com",
-      "fullName": "John Green",
-      "role": 1,
-      "id": 4
-    },
-    {
-      "email": "kg@denx.com",
-      "fullName": "Kang Chencu",
-      "role": 1,
-      "id": 5,
-      "userId": 5
-    },
-    {
-      "id": 7,
-      "email": "ksa@ho.co",
-      "fullName": "Kei Slazse",
-      "role": 1,
-      "userId": "4f69000d-65a3-4ef3-9d28-ff8485350048"
-    },
-    {
-      "userId": "979eee30-ec88-471b-a2f9-35100f15b879",
-      "email": "keas@ho.co",
-      "fullName": "Kaes Slamsa",
-      "role": 1,
-      "id": 8
-    },
-    {
-      "userId": "ad5ddcf2-b493-4022-86b6-f5e954a91908",
-      "email": "hsaw@ho.co",
-      "fullName": "Holasea Saersa",
-      "role": 1,
-      "id": 9
-    },
-    {
-      "fullName": "Keoas sa",
-      "role": "1",
-      "email": "kas@ho.co",
-      "userId": "a145423c-09c8-418e-ac6d-43ca74ee84b2",
-      "id": 10
-    },
-    {
-      "userId": "d2c510bd-2782-463f-afb6-6d09e1d679ab",
-      "email": "kokoca@mail.com",
-      "fullName": "Koko Caszsi",
-      "role": 1,
-      "id": 11
-    },
-    {
-      "userId": "075f1e6b-89a2-4e3b-95ea-3751d9bbff29",
-      "email": "kralsasd@ho.co",
-      "fullName": "Krals Cra Rca",
-      "role": 1,
-      "id": 12
-    },
-    {
-      "userId": "82342477-d53d-4091-8c70-f5aac17304e6",
-      "email": "joasd@ho.co",
-      "fullName": "Joa Sdal",
-      "role": 1,
-      "id": 13
-    },
-    {
       "userId": "64fe14fc-f071-455e-88d0-102003470312",
       "email": "superadmin@mail.com",
-      "fullName": "Super Admin",
+      "fullName": "Obaid Samim",
       "role": 3,
       "id": 14
     },
@@ -235,32 +167,25 @@
       "id": 15
     },
     {
-      "userId": "62cb2b27-f892-4be1-b462-d8ae26283e1d",
-      "email": "customer@mail.com",
+      "userId": "8046e81f-c90b-4534-b210-8c27e0f9336d",
+      "email": "obaidsamim@humber.ca",
       "fullName": "Customer",
       "role": 1,
       "id": 16
     },
     {
-      "userId": "7c8ffecc-19e3-474d-9690-f3b396d81f6e",
-      "email": "demo@mail.com",
-      "fullName": "Demo Account",
+      "userId": "f704bc72-171b-423b-baf9-7f983aa7991b",
+      "email": "hi@mail.com",
+      "fullName": "hello",
       "role": 1,
       "id": 17
     },
     {
-      "userId": "68d906d4-06b6-4b7b-ab74-d1a934965957",
-      "email": "ldksad@ho.co",
-      "fullName": "Ronca Mestip",
-      "role": 1,
+      "userId": "8b3f4365-b23f-4b58-bd27-d7e01fa96d82",
+      "email": "usman@mehm.com",
+      "fullName": "usman mehmood",
+      "role": 3,
       "id": 18
-    },
-    {
-      "userId": "849c94e2-f2d6-41e3-ae19-5349f0d97d7f",
-      "email": "noobadmin@ho.co",
-      "fullName": "Noob Customer",
-      "role": 1,
-      "id": 19
     }
   ]
 }

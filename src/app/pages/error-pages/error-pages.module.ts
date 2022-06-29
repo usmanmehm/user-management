@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ErrorPagesRoutingModule } from './error-pages-routing.module';
-// WRAPPER
+//HERE WRAPPER
 import { ErrorPagesComponent } from './error-pages.component';
-// PAGES
+//HERE IS PAGES
 import { ForbiddenPage, NotfoundPage } from './contents';
 
 @NgModule({

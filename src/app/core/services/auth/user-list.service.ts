@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
-// SERVICES
+//HERE IS SERVICES
 import { ApiService, GlobalDataService } from '../common';
 import { SnackMessageService } from '../notifcation';
-// MODELS
+//HERE IS MODELS
 import { HTTP_REQ } from '@models/common';
 import { PROFILE, REGISTER_FORM_DATA } from '@models/auth';
 @Injectable({
@@ -15,7 +15,7 @@ export class UserListService {
     private snackMessage: SnackMessageService,
     private globalDataService: GlobalDataService
   ) {}
-  // LIST USERS
+  //HERE IS LIST USERS
   async getAllUsers(): Promise<PROFILE[]> {
     const currentUser: PROFILE | null =
       this.globalDataService.currentUser$.getValue();
@@ -34,12 +34,12 @@ export class UserListService {
       return [];
     }
   }
-  // ADD NEW USER
+  //HERE IS ADD NEW USER
   async addNewUser(
     formData: REGISTER_FORM_DATA
   ): Promise<{ success: boolean; user: PROFILE }> {
     const userUUID = uuidv4();
-    // REGISTER USER
+    //HERE IS REGISTER USER
     const httpData: HTTP_REQ = {
       url: 'register',
       body: {
@@ -50,7 +50,7 @@ export class UserListService {
     };
     const { success, data, error } = await this.apiService.post(httpData);
     if (success && data?.accessToken) {
-      // IF USER REGISTERED SUCCESSFULLY THEN CREATE PROFILE DATA
+      //HERE IS IF USER REGISTERED SUCCESSFULLY THEN CREATE PROFILE DATA
       const profileHttpData: HTTP_REQ = {
         url: 'profiles',
         body: {
@@ -110,16 +110,16 @@ export class UserListService {
       return { success: false, user: data };
     }
   }
-  // LIST USERS WITH ROLE
+  //HERE IS LIST USERS WITH ROLE
   private getRoleLTE(userRole: number | undefined) {
     switch (userRole) {
-      // SUPER ADMIN CAN LIST ALL
+      //HERE IS SUPER ADMIN CAN LIST ALL
       case 3:
         return 3;
-      // ADMIN CAN LIST USERS
+      //HERE IS ADMIN CAN LIST USERS
       case 2:
         return 1;
-      // OTHERS CANT LIST
+      //HERE IS  OTHERS CANT LIST
       default:
         return -1;
     }

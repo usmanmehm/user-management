@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// SHARED MODULE
+//HERE IS SHARED MODULE
 import { SharedModule } from '@shared/shared.module';
 
 import { AuthRoutingModule } from './auth-routing.module';
-// AUTH LAYOUT
+//HERE IS AUTH LAYOUT
 import { AuthComponent } from './auth.component';
-// AUTH PAGES
+//HERE IS AUTH PAGES
 import { LoginPage, RegisterPage } from './contents';
 @NgModule({
   declarations: [AuthComponent, LoginPage, RegisterPage],

@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { UserListService } from '@core/services/auth';
-// MODELS
+//HERE IS  MODELS
 import { PROFILE } from '@models/auth';
 @Component({
   selector: 'app-user-modal',

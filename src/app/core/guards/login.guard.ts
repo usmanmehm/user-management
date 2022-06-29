@@ -12,7 +12,7 @@ import {
 } from '@angular/router';
 
 import { Observable } from 'rxjs';
-// SERVICES
+//HERE IS SERVICES
 import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
@@ -20,7 +20,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class LoginGuard implements CanActivate, CanActivateChild, CanLoad {
   constructor(private cookieService: CookieService, private router: Router) {}
-  // CHECK IF LOGGED
+  //HERE IS CHECK IF LOGGED
   get checkAuth() {
     const isLogged = this.cookieService.get('authToken') ? true : false;
     if (!isLogged) {

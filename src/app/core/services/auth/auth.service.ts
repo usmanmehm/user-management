@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-// TO NAVIGATE AFTER LOGIN
+//HERE IS TO NAVIGATE AFTER LOGIN
 import { Router } from '@angular/router';
 
 import { v4 as uuidv4 } from 'uuid';
-// SAVE TOKEN TO COOKIES
+//HERE IS SAVE TOKEN TO COOKIES
 import { CookieService } from 'ngx-cookie-service';
-// SERVICES
+//HERE IS SERVICES
 import { ApiService, GlobalDataService } from '../common';
 import { SnackMessageService } from '../notifcation';
-// MODELS
+//HERE IS MODELS
 import { HTTP_REQ } from '@models/common';
 import { LOGIN_FORM_DATA, PROFILE, REGISTER_FORM_DATA } from '@models/auth';
 
@@ -23,10 +23,10 @@ export class AuthService {
     private snackMessage: SnackMessageService,
     private globalDataService: GlobalDataService
   ) {}
-  // REGISTER
+  //HERE IS REGISTER
   async register(formData: REGISTER_FORM_DATA) {
     delete formData.passwordConfirm;
-    // ! JSON SERVER NOT RETURN ID VALUE
+    //HERE IS ! JSON SERVER NOT RETURN ID VALUE
     const userUUID = uuidv4();
     const httpData: HTTP_REQ = {
       url: 'register',
@@ -39,8 +39,8 @@ export class AuthService {
     const { success, data, error } = await this.apiService.post(httpData);
 
     if (success && data?.accessToken) {
-      // ! JSON AUTH SERVER HAS NOT PUT OR DELETE FOR USERS SCHEMA
-      // ! ADDITIONAL INFO WILL BE SAVE IN PROFILES SCHEMA
+      //HERE IS ! JSON AUTH SERVER HAS NOT PUT OR DELETE FOR USERS SCHEMA
+      //HERE IS ! ADDITIONAL INFO WILL BE SAVE IN PROFILES SCHEMA
       this.setCookies(data?.accessToken, formData?.email);
 
       const profileHttpData: HTTP_REQ = {
@@ -62,7 +62,7 @@ export class AuthService {
       });
     }
   }
-  // LOGIN
+  //HERE IS LOGIN
   async login(formData: LOGIN_FORM_DATA) {
     const httpData: HTTP_REQ = { url: 'login', body: formData };
     const { success, data, error } = await this.apiService.post(httpData);
@@ -90,14 +90,14 @@ export class AuthService {
       return null;
     }
   }
-  // LOGOUT
+  //HERE IS LOGOUT
   logOut() {
     this.cookieService.deleteAll();
     this.globalDataService.currentUser$.next(null);
     this.router.navigate(['/auth']);
   }
   private setCookies(oAuthToken: string, email: string) {
-    // JSON-SERVER TOKEN EXPIRES IN 1 HOUR
+    //HERE IS JSON-SERVER TOKEN EXPIRES IN 1 HOUR
     const expires = this.expireTime1Hour;
     this.cookieService.set('authToken', oAuthToken, {
       path: '/',
@@ -105,7 +105,7 @@ export class AuthService {
     });
     this.cookieService.set('email', email, { path: '/', expires });
   }
-  // GET NEXT 1 HOUR
+  //HERE IS GET NEXT 1 HOUR
   private get expireTime1Hour() {
     const dNow = new Date();
     let dTime = dNow.getTime();

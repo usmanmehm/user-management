@@ -11,14 +11,14 @@ import {
 } from '@angular/router';
 
 import { Observable } from 'rxjs';
-// SERVICES
+//HERE IS  SERVICES
 import { CookieService } from 'ngx-cookie-service';
 @Injectable({
   providedIn: 'root',
 })
 export class NotLoginGuard implements CanActivate, CanLoad {
   constructor(private cookieService: CookieService, private router: Router) {}
-  // CHECK IF NOT LOGGED
+  //HERE IS CHECK IF NOT LOGGED
   get checkAuth() {
     const isNotLogged = this.cookieService.get('authToken') ? false : true;
     if (!isNotLogged) {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// ANGULAR FORM
+//HERE IS ANGULAR FORM
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// SERVICES
+//HERE IS SERVICES
 import { AuthService } from '@core/services/auth';
 import { FormValidationService } from '@core/services/form';
 @Component({
@@ -11,7 +11,7 @@ import { FormValidationService } from '@core/services/form';
 })
 export class LoginComponent implements OnInit {
   showPassword: boolean = false;
-  // INIT LOGIN FORM DIRECTLY
+  //HERE IS INIT LOGIN FORM DIRECTLY
   loginForm: FormGroup = this.formBuilder.group({
     email: [
       '',
@@ -42,18 +42,18 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
-  // FIELD ERROR
+  //HERE IS FIELD ERROR
   fieldHasError(fieldName: string): boolean {
     return this.formValidationService.fieldHasError(fieldName, this.loginForm);
   }
-  // FIELD ERROR MESSAGE
+  //HERE IS FIELD ERROR MESSAGE
   getErrorMessage(fieldName: string): string {
     return this.formValidationService.getErrorMessage(
       fieldName,
       this.loginForm
     );
   }
-  // SUBMIT LOGIN FORM
+  //HERE IS SUBMIT LOGIN FORM
   onLoginSubmit() {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value);

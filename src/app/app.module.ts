@@ -7,16 +7,17 @@ import { environment } from '@environments/environment';
 import { CoreModule } from '@core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
+      // Register the ServiceWorker as soon as the app is stable or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
     CoreModule,

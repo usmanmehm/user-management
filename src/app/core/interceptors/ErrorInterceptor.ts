@@ -8,7 +8,7 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-// SERVICES
+//HERE IS SERVICES
 import { LoadingSpinnerService } from '@core/services/common';
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
@@ -21,10 +21,10 @@ export class ErrorInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         let errorMessage = '';
         if (error.error instanceof ErrorEvent) {
-          //  frontend error
+          // HERE IS frontend error
           errorMessage = `Error: ${error.error.message}`;
         } else {
-          // backend error
+          //HERE IS backend error
           errorMessage = error.error || error.message;
         }
         this.spinnerService.removeQuene();
